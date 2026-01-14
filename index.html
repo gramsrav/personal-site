@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="description" content="Greg Abrams - AI Engineer & Solutions Architect | Agentic RAG & Multimodal | HPC & Kubernetes - Specializing in production-grade Agentic AI systems">
+    <meta name="keywords" content="AI Engineer, Solutions Architect, Agentic RAG, LangGraph, Multimodal, vLLM, SGLang, Kubernetes, GPU Computing, HPC, Ray, H100, H200">
+    <meta name="author" content="Greg Abrams">
+
+    <title>Greg Abrams - AI Engineer and Solutions Architect | Agentic RAG & Multimodal</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap&v=2025" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 60px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        header .title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 12px 20px;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            margin: 0 auto 40px;
+            max-width: 1000px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 50px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .job {
+            margin-bottom: 35px;
+            padding-left: 20px;
+            border-left: 3px solid #e0e0e0;
+        }
+
+        .job:hover {
+            border-left-color: #667eea;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category h4 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .cert-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .summary-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .title {
+                font-size: 1.2rem;
+            }
+
+            main {
+                padding: 30px 20px;
+                margin: 0 20px 20px;
+            }
+
+            nav .container {
+                gap: 3px;
+                padding: 10px;
+            }
+
+            nav a {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .skills-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Greg Abrams</h1>
+            <p class="title">AI Engineer & Solutions Architect | Agentic RAG & Multimodal | HPC & Kubernetes</p>
+            <div class="contact-info">
+                <a href="tel:+17252615690"><i class="fas fa-phone"></i> 725-261-5690</a>
+                <a href="mailto:greg@abrams.us"><i class="fas fa-envelope"></i> greg@abrams.us</a>
+                <a href="https://www.gregabrams.com" target="_blank"><i class="fas fa-globe"></i> gregabrams.com</a>
+                <a href="https://www.linkedin.com/in/greg-abrams22253/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Temple, TX (Open to relocation/remote)</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#summary">Summary</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#publications">Publications</a>
+            <a href="#education">Education</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Professional Summary -->
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p class="summary-text">
+                Senior AI Engineer specializing in the architecture and deployment of production-grade Agentic AI systems.
+                I combine hands-on development of multi-agent RAG workflows (LangGraph, Python) with deep expertise in
+                optimizing distributed inference infrastructure (H100/H200, vLLM). Proven track record of building self-correcting
+                retrieval systems, implementing multimodal ingestion pipelines (OCR/Vision), and architecting scalable
+                orchestration layers (Ray, LeaderWorkerSet) for Tier-1 AI workloads.
+            </p>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+
+            <div class="job">
+                <h3>AI/ML Cloud Engineer</h3>
+                <div class="company">CoreWeave | Livingston, New Jersey (Remote)</div>
+                <div class="date">2023 – 2025</div>
+                <p style="margin-bottom: 15px; color: #555;">Leveraging deep systems knowledge to build and scale next-generation AI applications for the world's leading GPU cloud.</p>
+                <ul>
+                    <li><strong>Architected Agentic RAG Platform (LangGraph):</strong> Designed and deployed a modular "Agentic" retrieval system to automate technical solution discovery. Replaced monolithic code with LangGraph workflows, enabling conditional routing, self-correction, and state management.</li>
+                    <li><strong>Multimodal Data Integration:</strong> Built ingestion pipelines using OCR and vision models to extract text from technical diagrams and screenshots, successfully incorporating trapped visual data into the LLM's context window.</li>
+                    <li><strong>Advanced Reasoning:</strong> Implemented Adaptive Multi-Query workflows with LLM-driven Gap Analysis, allowing the system to detect missing info, generate targeted follow-up queries, and merge results from Vector Stores and Knowledge Graphs (Dgraph).</li>
+                    <li><strong>Hybrid Retrieval Pipeline:</strong> Built a sophisticated retrieval engine combining semantic search (Vector) and entity relationships (Graph), utilizing document expansion algorithms to improve context relevance by 5x.</li>
+                    <li><strong>High-Performance Inference Optimization:</strong> Engineered a high-throughput inference engine using vLLM and SGLang, achieving a 19x throughput increase vs. standard baselines. Deployed custom H200 Remote Reranking APIs with optimized KV-cache management and continuous batching strategies.</li>
+                    <li><strong>Distributed Workload Orchestration:</strong> Architected scalable compute clusters using Ray and Kubernetes LeaderWorkerSet (LWS) to manage distributed training and inference lifecycles. Resolved critical multi-node bottlenecks by tuning NCCL topology awareness and Slurm scheduling parameters for massive-scale GPU fleets.</li>
+                    <li><strong>Distributed Model Caching Architecture:</strong> Designed a transparent caching proxy for the Hugging Face Hub using Olah and JuiceFS backed by S3. Enabled block-level caching and LRU eviction for partial model downloads, significantly reducing startup latency and egress costs.</li>
+                    <li><strong>DevPod Solution Architecture:</strong> Designed and deployed a scalable Golden Path development environment on Kubernetes, enabling researchers to spin up consistent, GPU-accelerated workspaces instantly. Authored the public reference architecture driving enterprise adoption.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Senior Linux Programmer / Administrator</h3>
+                <div class="company">Genesco | Nashville, TN</div>
+                <div class="date">2022 – 2023</div>
+                <ul>
+                    <li><strong>Data Pipeline Engineering:</strong> Engineered real-time data integration pipelines using Python and Bash, ensuring data accuracy across a distributed enterprise Linux environment (2,000+ endpoints).</li>
+                    <li><strong>Infrastructure Reliability:</strong> Managed the stability of critical Point-of-Sale (POS) infrastructure, implementing automated remediation scripts that significantly reduced operational downtime.</li>
+                    <li><strong>API Integration:</strong> Developed custom API integrations to streamline workflows and architected standardized VMware vSphere deployment processes.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Senior Linux Developer / Administrator</h3>
+                <div class="company">Consulting First, Inc. | Nashville, TN</div>
+                <div class="date">2011 – 2022</div>
+                <ul>
+                    <li><strong>Multi-Cloud Architecture:</strong> Managed complex infrastructure spanning AWS, Azure, and Google Cloud, migrating legacy on-prem workloads to hybrid cloud environments.</li>
+                    <li><strong>Kubernetes Operations:</strong> Designed and managed high-availability Kubernetes clusters, implementing full-stack observability with Prometheus and Grafana prior to industry standardization.</li>
+                    <li><strong>Full-Stack Development:</strong> Developed and maintained performant web applications (PHP/Perl/JS), optimizing code for scalability under high traffic loads.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-brain"></i> AI Development</h4>
+                    <div class="skill-tags">
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">Agentic Workflows</span>
+                        <span class="tag">RAG Pipelines</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">vLLM</span>
+                        <span class="tag">SGLang</span>
+                        <span class="tag">Vector Databases (Weaviate/Milvus)</span>
+                        <span class="tag">Knowledge Graphs (Dgraph)</span>
+                        <span class="tag">Multimodal Data Ingestion</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-microchip"></i> AI Infrastructure</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Ray</span>
+                        <span class="tag">LeaderWorkerSet (LWS)</span>
+                        <span class="tag">Slurm</span>
+                        <span class="tag">NCCL</span>
+                        <span class="tag">JuiceFS</span>
+                        <span class="tag">Model Caching</span>
+                        <span class="tag">Inference Scaling</span>
+                        <span class="tag">Megatron-LM</span>
+                        <span class="tag">H100/H200 Optimization</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-cloud"></i> Cloud Native</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Kubernetes (CKA/CKAD)</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Helm</span>
+                        <span class="tag">Cilium</span>
+                        <span class="tag">Prometheus</span>
+                        <span class="tag">Grafana</span>
+                        <span class="tag">ArgoCD</span>
+                        <span class="tag">GitOps</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-server"></i> Systems & Core</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Linux (Red Hat/Ubuntu/Debian)</span>
+                        <span class="tag">Bash</span>
+                        <span class="tag">InfiniBand</span>
+                        <span class="tag">RoCE</span>
+                        <span class="tag">VMware</span>
+                        <span class="tag">CI/CD Design</span>
+                        <span class="tag">S3/Object Storage</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">CKA: Certified Kubernetes Administrator</div>
+                <div class="cert-item">CKAD: Certified Kubernetes Application Developer</div>
+                <div class="cert-item">NVIDIA: AI Infrastructure and Operations Fundamentals</div>
+                <div class="cert-item">VAST Data: Level 101 & 201 (Architecture & Networking)</div>
+                <div class="cert-item">IBM: Python for Data Science and AI</div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <div class="job">
+                <h3><a href="https://docs.coreweave.com/docs/products/cks/tutorials/devpod" target="_blank" rel="noopener noreferrer" style="color: #667eea; text-decoration: none;">"Deploy development environments with DevPod" (Reference Architecture)</a></h3>
+            </div>
+            <div class="job">
+                <h3><a href="https://www.linkedin.com/posts/activity-7093122392994025472-7BDk" target="_blank" rel="noopener noreferrer" style="color: #667eea; text-decoration: none;">"Hopping into High Availability: Tunneling in Kubernetes with DNS"</a></h3>
+            </div>
+            <div class="job">
+                <h3><a href="https://www.linkedin.com/posts/activity-7092769393260040192-ufB1" target="_blank" rel="noopener noreferrer" style="color: #667eea; text-decoration: none;">"Kubernetes - Migrating from Flannel and Friends to Cilium"</a></h3>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="job">
+                <h3>Bachelor of Business Administration (BBA) – Accounting & Computer Science</h3>
+                <div class="company">Columbus State University | GPA: 3.90 (Dean's List)</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Greg Abrams. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
